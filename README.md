@@ -18,7 +18,7 @@
 <!-- base0E = "#8FBCBB", -->
 <!-- base0F = "#e5e9f0", -->
 
-## Nvim config for NvChad & Nord
+## NvChad config for Nvim with Nord theme
 
-This is my first time modifying ``readme`` file via [Obsidian](https://obsidian.md) to automate the workflow.
+This is my first time modifying ``readme`` file via [Obsidian](https://obsidian.md) to automate the workflow and optimize my note taking experience 
 
