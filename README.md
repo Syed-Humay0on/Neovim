@@ -20,5 +20,5 @@
 
 ## Nvim config for NvChad & Nord
 
-This is my first time modifying Readme File via [Obsidian]223 to automate the workflow.
+This is my first time modifying Readme File via [Obsidian](https://obsidian.ms) to automate the workflow.
 
