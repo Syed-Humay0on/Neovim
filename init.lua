@@ -35,3 +35,13 @@ require "autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+-- auto HTML
+vim.o.autowriteall = true
+vim.api.nvim_create_autocmd({ 'InsertLeavePre', 'TextChanged', 'TextChangedP' }, {
+  pattern = '*.html',
+  callback = function()
+    vim.cmd('silent! write')
+  end,
+})
+
