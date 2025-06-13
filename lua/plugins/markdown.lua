@@ -14,7 +14,7 @@ return {
     dependencies = {
       -- You can choose one of the following pickers
       "nvim-telescope/telescope.nvim",
-      -- "ibhagwan/fzf-lua",
+      "ibhagwan/fzf-lua",
       -- "echasnovski/mini.pick",
     },
     config = function()
