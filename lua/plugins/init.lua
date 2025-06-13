@@ -13,6 +13,13 @@ return {
     end,
   },
 
+  {
+    "barrett-ruth/live-server.nvim",
+    build = "npm install --prefix server",
+    cmd = { "LiveServerStart", "LiveServerStop" },
+    config = true, -- this is enough to call require("live-server").setup()
+  },
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
