@@ -1,4 +1,4 @@
-![NVChad](nchad.jpg)
+![NVChad](assets/2.png)
 <br/>
 **This repo is supposed to used as config by NvChad users!**
 
