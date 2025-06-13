@@ -21,6 +21,7 @@ require("lazy").setup({
     branch = "v2.5",
     import = "nvchad.plugins",
   },
+  { "nvim-treesitter/nvim-treesitter", branch = "master", lazy = false, build = ":TSUpdate" },
 
   { import = "plugins" },
 }, lazy_config)
@@ -38,10 +39,9 @@ end)
 
 -- auto HTML
 vim.o.autowriteall = true
-vim.api.nvim_create_autocmd({ 'InsertLeavePre', 'TextChanged', 'TextChangedP' }, {
-  pattern = '*.html',
+vim.api.nvim_create_autocmd({ "InsertLeavePre", "TextChanged", "TextChangedP" }, {
+  pattern = "*.html",
   callback = function()
-    vim.cmd('silent! write')
+    vim.cmd "silent! write"
   end,
 })
-
