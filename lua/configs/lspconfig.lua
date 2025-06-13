@@ -14,6 +14,8 @@ lspconfig.elixirls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   cmd = { vim.fn.stdpath "data" .. "/mason/packages/elixir-ls/language_server.sh" },
+  filetypes = { "elixir", "eelixir", "heex" },
+  root_dir = require("lspconfig.util").root_pattern("mix.exs", ".git"),
   settings = {
     elixirLS = {
       dialyzerEnabled = true,
