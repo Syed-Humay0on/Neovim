@@ -8,6 +8,7 @@ local on_attach = require("nvchad.configs.lspconfig").on_attach
 -- local capabilities = require("nvchad.configs.lspconfig").capabilities
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require "lspconfig"
+local schemastore = require "schemastore"
 
 -- Setup ElixirLS
 lspconfig.elixirls.setup {
@@ -22,6 +23,49 @@ lspconfig.elixirls.setup {
       fetchDeps = false,
     },
   },
+}
+
+-- Dockerfile
+lspconfig.dockerls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "Dockerfile", "dockerfile" },
+  root_dir = lspconfig.util.root_pattern("Dockerfile", ".git"),
+}
+
+-- DockerCompose
+lspconfig.docker_compose_language_service.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "yaml", "yml" },
+  root_dir = lspconfig.util.root_pattern("docker-compose.yml", "compose.yaml", ".git"),
+  settings = {
+    dockerComposeLanguageService = {
+      enable = true,
+    },
+  },
+}
+
+-- YAML Language Server
+lspconfig.yamlls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    yaml = {
+      schemas = schemastore.yaml.schemas(),
+      validate = true,
+      completion = true,
+      hover = true,
+    },
+  },
+}
+
+-- GitHub Actions Language Server
+lspconfig.gha_ls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "yaml", "yml" },
+  root_dir = lspconfig.util.root_pattern ".github/workflows",
 }
 
 -- Setup php LSP

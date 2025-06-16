@@ -23,6 +23,10 @@ require("lazy").setup({
   },
   { "nvim-treesitter/nvim-treesitter", branch = "master", lazy = false, build = ":TSUpdate" },
 
+{
+  "b0o/schemastore.nvim",
+  lazy = true,
+},
   { import = "plugins" },
 }, lazy_config)
 
