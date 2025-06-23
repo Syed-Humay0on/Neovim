@@ -1,6 +1,6 @@
 return {
   "epwalsh/obsidian.nvim",
-  version = "*",  -- recommended, use latest release instead of latest commit
+  version = "*", -- recommended, use latest release instead of latest commit
   lazy = true,
   ft = "markdown",
   -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
@@ -21,7 +21,7 @@ return {
     workspaces = {
       {
         name = "personal",
-        path = "~/vaults/personal",
+        path = "/home/proto/Obsidian Vault",
       },
       {
         name = "work",
@@ -29,6 +29,16 @@ return {
       },
     },
 
+    ui = {
+      enable = true, -- this is the default
+    },
+
     -- see below for full list of options 👇
   },
+  config = function(_, opts)
+    require("obsidian").setup(opts)
+
+    -- Keymap for ObsidianSearch
+    vim.keymap.set("n", "<leader>oo", "<cmd>ObsidianSearch<CR>", { desc = "Search Obsidian notes" })
+  end,
 }
