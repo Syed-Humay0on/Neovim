@@ -22,7 +22,31 @@ require("lazy").setup({
     import = "nvchad.plugins",
   },
 
-  { "nvim-treesitter/nvim-treesitter", branch = "master", lazy = false, build = ":TSUpdate" },
+  -- { "nvim-treesitter/nvim-treesitter", branch = "master", lazy = false, build = ":TSUpdate" },
+  -- ✅ Clean and modern
+-- in your lazy.nvim setup file (e.g., plugins.lua)
+{
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  config = function()
+    require("nvim-treesitter.configs").setup {
+      ensure_installed = {
+        "lua", "typescript", "elixir", "dockerfile", "yaml", "markdown", "markdown_inline"
+      },
+      sync_install = false,
+      ignore_install = {},
+      auto_install = true,
+      modules = {},
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = { "markdown" },
+      },
+    }
+  end,
+  lazy = false,  -- or true if you prefer lazy-loading, but then config is needed
+},
+
+
 
   {
     "b0o/schemastore.nvim",
