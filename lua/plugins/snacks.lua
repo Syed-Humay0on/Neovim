@@ -2,7 +2,7 @@ return
 -- lazy.nvim
 {
   "folke/snacks.nvim",
-  ---@type snacks.Config
+  -- -@type snacks.Config
   opts = {
     picker = {
       -- your picker configuration comes here
