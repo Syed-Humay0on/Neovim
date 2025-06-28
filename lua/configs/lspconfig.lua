@@ -61,12 +61,12 @@ lspconfig.yamlls.setup {
 }
 
 -- GitHub Actions Language Server
-lspconfig.gha_ls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = { "yaml", "yml" },
-  root_dir = lspconfig.util.root_pattern ".github/workflows",
-}
+-- lspconfig.gha_ls.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   filetypes = { "yaml", "yml" },
+--   root_dir = lspconfig.util.root_pattern ".github/workflows",
+-- }
 
 -- Setup php LSP
 lspconfig.intelephense.setup {
