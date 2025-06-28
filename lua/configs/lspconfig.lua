@@ -25,6 +25,33 @@ lspconfig.elixirls.setup {
   },
 }
 
+-- LaTeX LSP: texlab
+lspconfig.texlab.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "tex", "bib" },
+  root_dir = lspconfig.util.root_pattern(".latexmkrc", ".git", "*.tex"),
+  settings = {
+    texlab = {
+      build = {
+        executable = "latexmk",
+        args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+        onSave = true,
+        forwardSearchAfter = true,
+      },
+      forwardSearch = {
+        executable = "zathura", -- or your PDF viewer, like "okular" or "evince"
+        args = { "--synctex-forward", "%l:1:%f", "%p" },
+      },
+      chktex = {
+        onOpenAndSave = true,
+        onEdit = false,
+      },
+    },
+  },
+}
+
+
 -- Dockerfile
 lspconfig.dockerls.setup {
   on_attach = on_attach,
