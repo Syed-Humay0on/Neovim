@@ -16,7 +16,3 @@ vim.keymap.set(
   end,
   { desc = "Toggle Kubectl", noremap = true, silent = true }
 )
-
--- 👇 Quit key inside kubectl.nvim view
-vim.keymap.set("n", "q", "<Plug>(kubectl.quit)", { desc = "Quit Kubectl view", noremap = false, silent = true })
-
