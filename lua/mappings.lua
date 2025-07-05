@@ -12,7 +12,7 @@ vim.keymap.set(
   "n",
   "<leader>k",
   function()
-    require("kubectl").toggle({ tab = false })
+    require("kubectl").toggle({ tab = true })
   end,
   { desc = "Toggle Kubectl", noremap = true, silent = true }
 )
