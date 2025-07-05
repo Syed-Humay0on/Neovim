@@ -7,7 +7,7 @@ return {
     -- build = 'cargo build --release',
     dependencies = "saghen/blink.download",
     config = function()
-      require("kubectl").setup()
+      require("kubectl").setup({})
     end,
   },
 }
