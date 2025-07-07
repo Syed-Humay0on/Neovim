@@ -1,6 +1,6 @@
 ![NVChad](assets/2.png)
 <br/>
-# Neovim [NVChad](https://nvchad.com/) config
+# My Neovim [NVChad](https://nvchad.com/) config
  **This repo is my personal config for NvChad!**
 
 - This is my main nvchad config that I update occassionally based on my preferences.
