@@ -20,6 +20,10 @@
     config = true, -- this is enough to call require("live-server").setup()
   },
 
+  {
+    "FelipeLema/cmp-async-path", enabled = false
+  },
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
