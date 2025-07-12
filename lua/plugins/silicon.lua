@@ -3,7 +3,8 @@ return
   "narutoxy/silicon.lua",
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
-    require("silicon").setup({})
+    local silicon = require("silicon")   -- 👈 Add this line!
+    silicon.setup({})
 
     -- 🔧 Custom keybinds (no <Leader>)
     vim.keymap.set("v", "<M-s>", function() silicon.visualise_api({}) end, { desc = "Silicon: selection to image" })
