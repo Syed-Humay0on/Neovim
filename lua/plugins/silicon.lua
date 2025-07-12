@@ -15,6 +15,7 @@ return {
   end,
   opts = {
     -- Configuration here, or leave empty to use defaults
+    -- font = "FiraCode Nerd Font=30;Standard Symbols PS=30",
     theme = "Nord",
     background = "#444a73",
     line_offset = function(args)
