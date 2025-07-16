@@ -25,6 +25,14 @@ lspconfig.elixirls.setup {
   },
 }
 
+-- Terraform Language Server
+lspconfig.terraformls.setup {
+  cmd = { "terraform-ls", "serve" },
+  filetypes = { "terraform", "tf", "hcl" },
+  root_dir = lspconfig.util.root_pattern(".terraform", ".git", "main.tf"),
+  settings = {},
+}
+
 -- LaTeX LSP: texlab
 lspconfig.texlab.setup {
   on_attach = on_attach,
