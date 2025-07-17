@@ -16,4 +16,3 @@ end, { desc = "Toggle Kubectl", noremap = true, silent = true })
 -- end, { desc = "Mongo: Pick Document" })
 
 vim.keymap.set("n", "<leader>oo", "<cmd>ObsidianSearch<CR>", { desc = "Search Obsidian notes" })
-
