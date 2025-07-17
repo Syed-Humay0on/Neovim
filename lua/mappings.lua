@@ -14,3 +14,6 @@ end, { desc = "Toggle Kubectl", noremap = true, silent = true })
 -- vim.keymap.set("n", "<leader>m", function()
 --   require("mongo-nvim.pickers").document_picker()
 -- end, { desc = "Mongo: Pick Document" })
+
+vim.keymap.set("n", "<leader>oo", "<cmd>ObsidianSearch<CR>", { desc = "Search Obsidian notes" })
+
