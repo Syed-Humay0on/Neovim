@@ -117,9 +117,9 @@ return
       desc = "Find Config File",
     },
     {
-      "<leader>ff",
+      "<leader>sf",
       function()
-        Snacks.picker.files()
+        Snacks.picker.files({ layout = "ivy", })
       end,
       desc = "Find Files",
     },
