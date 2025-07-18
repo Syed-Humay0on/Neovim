@@ -4,7 +4,12 @@ return {
     "folke/snacks.nvim",
     "nvim-telescope/telescope.nvim", -- explicitly ensure this is installed
   },
-  opts = { ui = "telescope" },
+  opts = {
+    ui = "telescope",
+    max_recents = 30, -- Configure recent icons limit
+    add_default_keybindings = true, -- Add default keybindings
+    use_new_command = true, -- Enable new command system
+  },
   cmd = { "Nerdy", "NerdyRecents" },
   keys = {
     { "<leader>fn", "<cmd>Nerdy<CR>", desc = "Browse nerd icons" },
