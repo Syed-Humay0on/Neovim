@@ -6,13 +6,13 @@ return {
     require("fzf-lua").setup {}
   end,
   opts = {},
-  keys = {
-    {
-      "<leader><leader>",
-      function()
-        require("fzf-lua").files()
-      end,
-      desc = "Find Files in project directory",
-    },
-  },
+  -- -- keys = {
+  --   {
+  --     "<leader><leader>",
+  --     function()
+  --       require("fzf-lua").files()
+  --     end,
+  --     desc = "Find Files in project directory",
+  --   },
+  -- },
 }
