@@ -26,19 +26,22 @@ lspconfig.elixirls.setup {
 }
 
 -- GoLang languge server
--- Setup Go LSP (gopls) using go.nvim config
-require("go").setup({
-  lsp_cfg = false, -- disable built-in setup from go.nvim
-  -- add other go.nvim config here if needed
-})
-
-local go_lsp_cfg = require("go.lsp").config()
-
-lspconfig.gopls.setup(vim.tbl_deep_extend("force", go_lsp_cfg, {
+lspconfig.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-}))
-
+  cmd = { "gopls" },
+  filetypes = { "go", "gomod", "gowork", "gotmpl" },
+  root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
+  settings = {
+    gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true,
+      },
+    },
+  },
+}
 
 -- Terraform Language Server
 lspconfig.terraformls.setup {
@@ -73,7 +76,6 @@ lspconfig.texlab.setup {
     },
   },
 }
-
 
 -- Dockerfile
 lspconfig.dockerls.setup {
