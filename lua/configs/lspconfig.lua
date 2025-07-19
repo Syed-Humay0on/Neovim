@@ -25,6 +25,21 @@ lspconfig.elixirls.setup {
   },
 }
 
+-- GoLang languge server
+-- Setup Go LSP (gopls) using go.nvim config
+require("go").setup({
+  lsp_cfg = false, -- disable built-in setup from go.nvim
+  -- add other go.nvim config here if needed
+})
+
+local go_lsp_cfg = require("go.lsp").config()
+
+lspconfig.gopls.setup(vim.tbl_deep_extend("force", go_lsp_cfg, {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}))
+
+
 -- Terraform Language Server
 lspconfig.terraformls.setup {
   cmd = { "terraform-ls", "serve" },
