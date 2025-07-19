@@ -43,6 +43,49 @@ lspconfig.gopls.setup {
   },
 }
 
+-- Ruby lsp using solargraph
+lspconfig.solargraph.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "solargraph", "stdio" },
+  filetypes = { "ruby" },
+  root_dir = lspconfig.util.root_pattern("Gemfile", ".git"),
+  settings = {
+    solargraph = {
+      diagnostics = true,
+      formatting = true,
+    },
+  },
+}
+
+-- Rust lsp using rust_analyzer
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "rust-analyzer" },
+  filetypes = { "rust" },
+  root_dir = lspconfig.util.root_pattern("Cargo.toml", "rust-project.json", ".git"),
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
+      },
+      checkOnSave = {
+        command = "clippy",
+      },
+    },
+  },
+}
+
+--zig lsp using zig Language Server
+lspconfig.zls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "zls" },
+  filetypes = { "zig" },
+  root_dir = lspconfig.util.root_pattern("build.zig", ".git"),
+}
+
 -- Terraform Language Server
 lspconfig.terraformls.setup {
   cmd = { "terraform-ls", "serve" },
@@ -142,7 +185,7 @@ lspconfig.intelephense.setup {
 lspconfig.ts_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  root_dir = require("lspconfig/util").root_pattern("package.json", "tsconfig.json", ".git"),
+  root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
 }
 
 lspconfig.eslint.setup {
