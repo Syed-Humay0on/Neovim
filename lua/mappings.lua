@@ -16,5 +16,9 @@ end, { desc = "Toggle Kubectl", noremap = true, silent = true })
 -- end, { desc = "Mongo: Pick Document" })
 
 vim.keymap.set("n", "<leader>oo", "<cmd>ObsidianSearch<CR>", { desc = "Search Obsidian notes" })
--- vim.keymap.set("n", "<leader>z", "<cmd>FzfLua files<CR>", { desc = "Fuzzy Search Files" })
+vim.keymap.set("n", "<leader>dt", function() require("dap").toggle_breakpoint() end, { desc = "Toggle Breakpoint" })
+vim.keymap.set("n", "<leader>dc", function() require("dap").continue() end, { desc = "Continue Debugging" })
+vim.keymap.set("n", "<leader>dr", function() require("dap").repl.toggle() end, { desc = "Toggle REPL" })
+vim.keymap.set("n", "<leader>dx", function() require("dap").terminate() end, { desc = "Terminate Debug" })
 
+-- vim.keymap.set("n", "<leader>z", "<cmd>FzfLua files<CR>", { desc = "Fuzzy Search Files" })
