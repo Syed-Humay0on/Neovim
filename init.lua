@@ -11,6 +11,9 @@ end
 
 vim.opt.relativenumber = true
 vim.opt.rtp:prepend(lazypath)
+vim.opt.wildignorecase = true
+vim.opt.wildmode = { "longest:full", "full" }
+
 
 local lazy_config = require "configs.lazy"
 
