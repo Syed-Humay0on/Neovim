@@ -12,6 +12,9 @@ return {
     "3rd/image.nvim",
     config = function()
       require("image").setup {
+        rocks = {
+          hererocks = true,
+        },
         backend = "kitty",
         processor = "magick_cli", -- or "magick_rock"
         integrations = {
