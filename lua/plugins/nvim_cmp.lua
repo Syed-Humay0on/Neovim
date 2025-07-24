@@ -8,6 +8,7 @@ return {
       "hrsh7th/cmp-path",
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
+      "R-nvim/cmp-r", -- Added cmp-r here
     },
     config = function()
       local cmp = require("cmp")
@@ -56,6 +57,7 @@ return {
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "luasnip" },
+          { name = "cmp_r" },
           { name = "path" },
         }, {
           { name = "buffer" },
@@ -67,6 +69,7 @@ return {
               luasnip = "[Snippet]",
               buffer = "[Buffer]",
               path = "[Path]",
+              cmp_r = "[R]"
             })[entry.source.name]
             return item
           end,
@@ -77,6 +80,8 @@ return {
           },
         },
       })
+      -- Set up cmp-r explicitly
+      require("cmp_r").setup({})
     end,
   },
 }

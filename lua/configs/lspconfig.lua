@@ -24,6 +24,20 @@ lspconfig.elixirls.setup {
     },
   },
 }
+--R LSP Client
+lspconfig.r_language_server.setup({
+  on_attach = on_attach,  -- your existing `on_attach` function
+  capabilities = capabilities,  -- your existing capabilities
+})
+-- Setup Templ
+lspconfig.templ.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { vim.fn.stdpath ("data") .. "/mason/bin/templ" },
+  filetypes = {"templ"},
+  root_dir = require("lspconfig.util").root_pattern("go.mod", ".git"),
+  settings = {},
+}
 
 -- GoLang languge server
 lspconfig.gopls.setup {
