@@ -155,6 +155,14 @@ lspconfig.docker_compose_language_service.setup {
   },
 }
 
+-- Python LSP using Pyright
+lspconfig.pyright.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "python" },
+  root_dir = lspconfig.util.root_pattern("pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", ".git"),
+}
+
 -- YAML Language Server
 lspconfig.yamlls.setup {
   on_attach = on_attach,
