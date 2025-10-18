@@ -8,9 +8,21 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+-- Wrapped Keymaps for Kubectl
 vim.keymap.set("n", "<leader>k", function()
-  require("kubectl").toggle { tab = true }
+  local ok, kubectl = pcall(require, "kubectl")
+  if ok then
+    kubectl.toggle { tab = false }
+  else
+    vim.notify("kubectl.nvim not loaded yet", vim.log.levels.WARN)
+  end
 end, { desc = "Toggle Kubectl", noremap = true, silent = true })
+--
+-- vim.keymap.set("n", "<leader>k", function()
+--   require("kubectl").toggle { tab = false }
+-- end, { desc = "Toggle Kubectl", noremap = true, silent = true })
+
 -- vim.keymap.set("n", "<leader>m", function()
 --   require("mongo-nvim.pickers").document_picker()
 -- end, { desc = "Mongo: Pick Document" })
