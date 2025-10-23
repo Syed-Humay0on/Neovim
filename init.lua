@@ -1,7 +1,8 @@
+vim.g.python3_host_prog = "/home/proto/miniconda3/envs/jupyter_env/bin/python"
+
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 -- vim.g.python3_host_prog = vim.fn.expand("/home/proto/miniconda3/envs/jupyter_env/bin/python")
-vim.g.python3_host_prog = "/home/proto/miniconda3/envs/jupyter_env/bin/python"
 -- vim.g.python3_host_prog = vim.fn.trim(vim.fn.system("which python3"))
 
 
