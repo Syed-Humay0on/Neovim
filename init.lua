@@ -1,5 +1,3 @@
-vim.g.python3_host_prog = "/home/proto/miniconda3/envs/jupyter_env/bin/python"
-
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 
