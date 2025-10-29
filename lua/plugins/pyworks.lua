@@ -6,11 +6,6 @@ return {
         "GCBallesteros/jupytext.nvim",
         config = true, -- IMPORTANT: This ensures jupytext.setup() is called!
       },
-      {
-        "benlubas/molten-nvim",     -- Required: Code execution
-        build = ":UpdateRemotePlugins", -- IMPORTANT: Required for Molten to work
-      },
-      "3rd/image.nvim",             -- Required: Image display
     },
     config = function()
       require("pyworks").setup({
