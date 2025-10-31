@@ -1,9 +1,3 @@
--- Re-enable Python provider & set host
--- Enable providers (must run early)
-vim.g.loaded_python3_provider = nil
-vim.g.loaded_node_provider = nil
-vim.g.loaded_ruby_provider = nil
-vim.g.loaded_perl_provider = nil
 -- vim.g.python3_host_prog = "/home/proto/.local/share/uv/tools/pynvim/bin/python3"
 vim.g.python3_host_prog = "/home/proto/uv_env/bin/python"
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
@@ -86,3 +80,12 @@ vim.api.nvim_create_autocmd({ "InsertLeavePre", "TextChanged", "TextChangedP" },
     vim.cmd "silent! write"
   end,
 })
+
+-- Re-enable Python provider & set host
+-- Enable providers (must run early)
+vim.g.loaded_python3_provider = nil
+vim.g.loaded_node_provider = nil
+vim.g.loaded_ruby_provider = nil
+vim.g.loaded_perl_provider = 0
+vim.cmd('runtime autoload/provider/python3.vim')
+
