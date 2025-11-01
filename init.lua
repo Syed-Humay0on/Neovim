@@ -88,4 +88,8 @@ vim.g.loaded_node_provider = nil
 vim.g.loaded_ruby_provider = nil
 vim.g.loaded_perl_provider = 0
 -- vim.cmd('runtime autoload/provider/python3.vim')
-
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("silent! call remote#host#LoadRemotePlugins()")
+  end,
+})
