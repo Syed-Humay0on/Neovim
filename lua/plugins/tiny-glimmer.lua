@@ -58,11 +58,11 @@ return {
         redo = {
           enabled = true,
           default_animation = {
-            name = "rainbow",
+            name = "pulse",
             settings = {
-              color = "#81A1C1",
-              max_duration = 400,
-              min_duration = 600,
+              from_color = "DiffAdd",
+              max_duration = 500,
+              min_duration = 500,
             },
           },
           redo_mapping = "<c-r>",
@@ -78,7 +78,7 @@ return {
         -- })
         substitute = {
           enabled = true,
-          default_animation = "pulsar",
+          default_animation = "reverse_fade",
         },
       },
 
