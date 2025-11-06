@@ -1,5 +1,4 @@
 return {
-
   "rachartier/tiny-glimmer.nvim",
   event = "VeryLazy",
   priority = 10, -- Low priority to catch other plugins' keybindings
@@ -25,11 +24,10 @@ return {
           enabled = true,
           default_animation = "fade",
         },
-
         -- Search navigation animation
         search = {
-          enabled = false,
-          default_animation = "pulse",
+          enabled = true,
+          default_animation = "reverse_fade",
           next_mapping = "n", -- Key for next match
           prev_mapping = "N", -- Key for previous match
         },
@@ -60,11 +58,11 @@ return {
         redo = {
           enabled = true,
           default_animation = {
-            name = "pulse",
+            name = "rainbow",
             settings = {
-              from_color = "DiffAdd",
-              max_duration = 500,
-              min_duration = 500,
+              color = "#81A1C1",
+              max_duration = 400,
+              min_duration = 600,
             },
           },
           redo_mapping = "<c-r>",
@@ -80,7 +78,7 @@ return {
         -- })
         substitute = {
           enabled = true,
-          default_animation = "bounce",
+          default_animation = "pulsar",
         },
       },
 
@@ -88,7 +86,7 @@ return {
       presets = {
         -- Pulsar-style cursor highlighting on specific events
         pulsar = {
-          enabled = false,
+          enabled = true,
           on_events = { "CursorMoved", "CmdlineEnter", "WinEnter" },
           default_animation = {
             name = "fade",
