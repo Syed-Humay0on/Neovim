@@ -37,14 +37,14 @@ return {
         -- Paste operation animation
         paste = {
           enabled = true,
-          default_animation = "reverse_fade",
+          default_animation = "pulse",
           paste_mapping = "p", -- Paste after cursor
           Paste_mapping = "P", -- Paste before cursor
         },
 
         -- Undo operation animation
         undo = {
-          enabled = false,
+          enabled = true,
           default_animation = {
             name = "fade",
             settings = {
@@ -58,9 +58,9 @@ return {
 
         -- Redo operation animation
         redo = {
-          enabled = false,
+          enabled = true,
           default_animation = {
-            name = "fade",
+            name = "pulse",
             settings = {
               from_color = "DiffAdd",
               max_duration = 500,
@@ -74,13 +74,13 @@ return {
       -- Third-party plugin integrations
       support = {
         -- Support for gbprod/substitute.nvim
-        -- Usage: require("substitute").setup({
+        -- Usage: require().setup({
         --     on_substitute = require("tiny-glimmer.support.substitute").substitute_cb,
         --     highlight_substituted_text = { enabled = false },
         -- })
         substitute = {
-          enabled = false,
-          default_animation = "fade",
+          enabled = true,
+          default_animation = "bounce",
         },
       },
 
