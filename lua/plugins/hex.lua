@@ -7,6 +7,6 @@ return {
     filetypes = { "binary", "hex" },
   },
   keys = {
-    { "<leader>hx", "<cmd>HexToggle<cr>", desc = "Toggle hex view" },
+    { "<leader>H", "<cmd>HexToggle<cr>", desc = "Toggle hex view" },
   },
 }

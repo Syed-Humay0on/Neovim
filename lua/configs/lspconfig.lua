@@ -48,7 +48,7 @@ vim.lsp.config("jsonls", {
 })
 
 -- Enable all language servers you want
-vim.lsp.enable({
+vim.lsp.enable {
   "html",
   "cssls",
   "ts_ls",
@@ -63,7 +63,8 @@ vim.lsp.enable({
   "clangd",
   "texlab",
   "marksman",
-})
+  "postgres_lsp", -- Add this line
+}
 
 -- 📝 Notes:
 -- - To see docs for these new APIs, run :h vim.lsp.config and :h vim.lsp.enable
