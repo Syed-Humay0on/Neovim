@@ -47,6 +47,19 @@ vim.lsp.config("jsonls", {
   },
 })
 
+vim.lsp.config("postgres_lsp", {
+  settings = {
+    postgres = {
+      languageServer = {
+        -- Reduce severity of lock warnings (or use "off" to disable)
+        sqlDiagnosticSeverity = "off",
+        -- Optional: Ignore certain diagnostic codes if you know them
+        -- diagnosticIgnoreList = ["lock_timeout", "multiple_alters"],
+      },
+    },
+  },
+})
+
 -- Enable all language servers you want
 vim.lsp.enable {
   "html",
