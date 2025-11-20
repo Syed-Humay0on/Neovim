@@ -60,6 +60,18 @@ vim.lsp.config("postgres_lsp", {
   },
 })
 
+vim.lsp.config("elixirls", {
+  settings = {
+    elixirLS = {
+      -- Ensure formatting is enabled
+      dialyzerEnabled = true,
+      fetchDeps = false,  -- Set to true if you want automatic deps fetching
+      suggestSpecs = true,
+      enableTestLenses = false,
+    },
+  },
+})
+
 -- Enable all language servers you want
 vim.lsp.enable {
   "html",
@@ -77,6 +89,7 @@ vim.lsp.enable {
   "texlab",
   "marksman",
   "postgres_lsp", -- Add this line
+  "elixirls",
 }
 
 -- 📝 Notes:
