@@ -32,31 +32,27 @@ return {
     }
   end,
   opts = {
-    -- Enable this to avoid conflicts with silicon's config file
     disable_defaults = true,
-
-    -- Your existing settings
     theme = "Nord",
     background = "#444a73",
-    line_offset = function(args)
-      return args.line1
+
+    -- Add language auto-detection
+    language = function()
+      local buf = vim.api.nvim_get_current_buf()
+      local filetype = vim.bo[buf].filetype
+      if filetype and filetype ~= "" then
+        return filetype
+      end
+      local filename = vim.api.nvim_buf_get_name(buf)
+      return vim.fn.fnamemodify(filename, ":e")
     end,
 
-    -- Custom output function that creates directory if needed
     output = function()
-      -- Define target directory
       local dir = "./CodeShots"
-
-      -- Create directory if it doesn't exist (works on Linux/Unix)
       if vim.fn.isdirectory(dir) == 0 then
         vim.fn.mkdir(dir, "p")
       end
-
-      -- Generate unique filename with timestamp
-      local filename = os.date "%Y-%m-%d_%H-%M-%S" .. "_code.png"
-
-      -- Return full path
-      return dir .. "/" .. filename
+      return dir .. "/" .. os.date "%Y-%m-%d_%H-%M-%S" .. "_code.png"
     end,
   },
 }
