@@ -91,6 +91,7 @@ vim.lsp.enable {
   "postgres_lsp", -- Add this line
   "elixirls",
   "gleam",
+  "zls"
 }
 
 -- 📝 Notes:
