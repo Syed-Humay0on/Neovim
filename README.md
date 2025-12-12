@@ -1,9 +1,10 @@
 <p float="left">
-  <img src="/assets/Neovim.png" width="50%" />
-  <img src="/assets/NeovimMarkdown.png" width="50%" />
+  <img src="/assets/Neovim.png" width="49%" />
+  <img src="/assets/NeovimMarkdown.png" width="49%" />
 </p>
 
 <br/>
+
 # Neovim [NVChad](https://nvchad.com/) config
 ## My ultimate Neovim/NVChad config 
  **This repo is my personal config for NvChad!**
