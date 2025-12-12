@@ -1,4 +1,4 @@
-![NVChad](assets/2.png)
+![NVChad](assets/Neovim.png)
 <br/>
 # Neovim [NVChad](https://nvchad.com/) config
 ## My ultimate Neovim/NVChad config 
