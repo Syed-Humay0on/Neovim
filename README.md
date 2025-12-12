@@ -1,6 +1,7 @@
 <p float="left">
   <img src="/assets/Neovim.png" width="49%" />
   <img src="/assets/NeovimMarkdown.png" width="49%" />
+  <img src="/assets/neovimLSP.png" width="49%" />
 </p>
 
 <br/>
