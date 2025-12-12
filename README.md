@@ -1,4 +1,6 @@
+| ---------------------------- | ---------------------------- |
 | ![NVChad](assets/Neovim.png) | ![NVChadmarkdown](assets/NeovimMarkdown.png) |
+| ---------------------------- | ---------------------------- | 
 <br/>
 # Neovim [NVChad](https://nvchad.com/) config
 ## My ultimate Neovim/NVChad config 
