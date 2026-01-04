@@ -90,6 +90,7 @@ vim.lsp.enable {
   "marksman",
   "postgres_lsp", -- Add this line
   "elixirls",
+  "protols",
   "gleam",
   "terraformls",
   "zls",
